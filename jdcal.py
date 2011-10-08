@@ -30,7 +30,9 @@ defined.
 Zero point of Modified Julian Date (MJD) and the MJD of 2000/1/1
 12:00:00 are also given.
 
-This module is based on the TPM C library, by Jeffery W. Percival.
+This module is based on the TPM C library, by Jeffery W. Percival. The
+idea for splitting Julian date into two floating point numbers was
+inspired by the IAU SOFA C library.
 
 :author: Prasanth Nair
 :contact: prasanthhn@gmail.com
