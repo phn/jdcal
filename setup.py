@@ -10,6 +10,7 @@ setup(
     name="jdcal",
     version=version,
     description="Julian dates from proleptic Gregorian and Julian calendars.",
+    long_description=open("README.rst").read(),
     license='BSD',
     author="Prasanth Nair",
     author_email="prasanthhn@gmail.com",
