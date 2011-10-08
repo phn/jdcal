@@ -39,9 +39,67 @@ also defined.
 Zero point of Modified Julian Date (MJD) and the MJD of 2000/1/1
 12:00:00 are also given as module level constants.
 
-This module is based on the `TPM`_ C library, by `Jeffrey
-W. Percival`_. The idea of splitting Julian date into two floating
-point numbers was inspired by the `IAU SOFA`_ C library.
+Examples
+--------
+
+Some examples are given below. For more information see
+http://oneau.wordpress.com/jdcal/.
+
+Gregorian calendar::
+
+    >>> gcal2jd(2000,1,1)
+    (2400000.5, 51544.0)
+    >>> 2400000.5 + 51544.0 + 0.5
+    2451545.0
+
+    >>> gcal2jd(2000,2,30)
+    (2400000.5, 51604.0)
+    >>> gcal2jd(2000,3,1)
+    (2400000.5, 51604.0)
+    >>> gcal2jd(2001,2,30)
+    (2400000.5, 51970.0)
+    >>> gcal2jd(2001,3,2)
+    (2400000.5, 51970.0)
+
+    >>> jd2gcal(*gcal2jd(2000,1,1))
+    (2000, 1, 1, 0.0)
+    >>> jd2gcal(*gcal2jd(1950,1,1))
+    (1950, 1, 1, 0.0)
+
+    >>> gcal2jd(2000,1,1)
+    (2400000.5, 51544.0)
+    >>> jd2gcal(2400000.5, 51544.0)
+    (2000, 1, 1, 0.0)
+    >>> jd2gcal(2400000.5, 51544.5)
+    (2000, 1, 1, 0.5)
+    >>> jd2gcal(2400000.5, 51544.245)
+    (2000, 1, 1, 0.24500000000261934)
+    >>> jd2gcal(2400000.5, 51544.1)
+    (2000, 1, 1, 0.099999999998544808)
+    >>> jd2gcal(2400000.5, 51544.75)
+    (2000, 1, 1, 0.75)
+
+Julian calendar::
+
+    >>> jd2jcal(*jcal2jd(2000, 1, 1))
+    (2000, 1, 1, 0.0)
+    >>> jd2jcal(*jcal2jd(-4000, 10, 11))
+    (-4000, 10, 11, 0.0)
+
+Gregorian leap year::
+
+    >>> is_leap(2000)
+    True
+    >>> is_leap(2100)
+    False
+
+JD for zero point of MJD, and MJD for JD2000.0::
+
+    >>> print MJD_0
+    2400000.5
+    >>> print MJD_JD2000
+    51544.5
+
 
 Installation
 ------------
