@@ -47,6 +47,7 @@ http://oneau.wordpress.com/jdcal/.
 
 Gregorian calendar::
 
+    >>> from jdcal import gcal2jd, jd2gcal
     >>> gcal2jd(2000,1,1)
     (2400000.5, 51544.0)
     >>> 2400000.5 + 51544.0 + 0.5
@@ -88,6 +89,7 @@ Julian calendar::
 
 Gregorian leap year::
 
+    >>> from jdcal import is_leap
     >>> is_leap(2000)
     True
     >>> is_leap(2100)
@@ -95,6 +97,7 @@ Gregorian leap year::
 
 JD for zero point of MJD, and MJD for JD2000.0::
 
+    >>> from jdcal import MJD_0, MJD_JD2000
     >>> print MJD_0
     2400000.5
     >>> print MJD_JD2000
