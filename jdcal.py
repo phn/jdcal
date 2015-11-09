@@ -42,7 +42,7 @@ from __future__ import division
 from __future__ import print_function
 import math
 
-__version__ = "1.1"
+__version__ = "1.0.1"
 
 MJD_0 = 2400000.5
 MJD_JD2000 = 51544.5
