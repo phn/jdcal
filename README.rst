@@ -131,8 +131,7 @@ Credits
 License
 -------
 
-Released under BSD; see
-http://www.opensource.org/licenses/bsd-license.php.
+Released under BSD; see LICENSE.txt.
 
 For comments and suggestions, email to user `prasanthhn` in the `gmail.com`
 domain.
