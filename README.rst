@@ -7,6 +7,10 @@ jdcal
 .. _pip: http://pypi.python.org/pypi/pip
 .. _easy_install: packages.python.org/distribute/easy_install.html
 
+.. image:: https://travis-ci.org/phn/jdcal.svg?branch=master
+    :target: https://travis-ci.org/phn/jdcal
+
+
 This module contains functions for converting between Julian dates and
 calendar dates.
 
