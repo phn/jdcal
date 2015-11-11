@@ -49,7 +49,9 @@ Examples
 Some examples are given below. For more information see
 http://oneau.wordpress.com/jdcal/.
 
-Gregorian calendar::
+Gregorian calendar:
+
+.. code-block:: python
 
     >>> from jdcal import gcal2jd, jd2gcal
     >>> gcal2jd(2000,1,1)
@@ -84,14 +86,18 @@ Gregorian calendar::
     >>> jd2gcal(2400000.5, 51544.75)
     (2000, 1, 1, 0.75)
 
-Julian calendar::
+Julian calendar:
+
+.. code-block:: python
 
     >>> jd2jcal(*jcal2jd(2000, 1, 1))
     (2000, 1, 1, 0.0)
     >>> jd2jcal(*jcal2jd(-4000, 10, 11))
     (-4000, 10, 11, 0.0)
 
-Gregorian leap year::
+Gregorian leap year:
+
+.. code-block:: python
 
     >>> from jdcal import is_leap
     >>> is_leap(2000)
@@ -99,7 +105,9 @@ Gregorian leap year::
     >>> is_leap(2100)
     False
 
-JD for zero point of MJD, and MJD for JD2000.0::
+JD for zero point of MJD, and MJD for JD2000.0:
+
+.. code-block:: python
 
     >>> from jdcal import MJD_0, MJD_JD2000
     >>> print MJD_0
@@ -122,12 +130,13 @@ or,
   $ easy_install jdcal
 
 
+Tests are in ``test_jdcal.py``.
+
 Credits
 --------
 
 1. A good amount of the code is based on the excellent `TPM`_ C library
-   by `Jeffrey W. Percival`_. A Python interface to this C library is
-   available at http://github.com/phn/pytpm.
+   by `Jeffrey W. Percival`_.
 2. The inspiration to split Julian dates into two numbers came from the
    `IAU SOFA`_ C library. No code or algorithm from the SOFA library is
    used in `jdcal`.

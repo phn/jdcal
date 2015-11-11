@@ -3,3 +3,4 @@ LICENSE.txt
 README.rst
 jdcal.py
 setup.py
+test_jdcal.py
