@@ -1,12 +1,45 @@
 sudo: false
+
 language: python
+
 python:
-    - "2.6"
-    - "2.7"
-    - "3.4"
-    - "3.5"
-    - "pypy"
-    - "pypy3"
+    - 2.6
+    - 2.7
+    - 3.4
+    - 3.5
+    - pypy
+    - pypy3
+
+matrix:
+    include:
+        - python: 3.5
+          env: STYLE='code'
+        - python: 3.5
+          env: STYLE='docs'
+
 install:
-    - "pip install -U pytest>=2.8"
-script: py.test test_jdcal.py
+    - |
+      if [[ $STYLE ]]; then
+        if [[ $STYLE == 'code' ]]; then
+            pip install pycodestyle
+        fi
+        if [[ $STYLE == 'docs' ]]; then
+            pip install pydocstyle
+        fi
+      else
+        pip install -U pytest
+      fi
+
+script:
+    - |
+      if [[ $STYLE ]]; then
+        if [[ $STYLE == 'code' ]]; then
+            pycodestyle --verbose jdcal.py test_jdcal.py
+        fi
+        if [[ $STYLE == 'docs' ]]; then
+            pydocstyle --verbose jdcal.py test_jdcal.py
+        fi
+      else
+        py.test
+      fi
+
