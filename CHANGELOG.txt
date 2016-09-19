@@ -3,7 +3,7 @@ jdcal 1.3
     Use setuptools instead of distutils. This enables package managers to
     create Python wheels.
 
-    See PR #7.jdcal 1.2.
+    See PR #7.
 
 jdcal 1.2
 
