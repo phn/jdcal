@@ -36,7 +36,7 @@ inspired by the IAU SOFA C library.
 
 :author: Prasanth Nair
 :contact: prasanthhn@gmail.com
-:license: BSD (http://www.opensource.org/licenses/bsd-license.php)
+:license: BSD (https://opensource.org/licenses/bsd-license.php)
 """
 from __future__ import division
 from __future__ import print_function

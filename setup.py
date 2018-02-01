@@ -16,7 +16,7 @@ setup(
     license='BSD',
     author="Prasanth Nair",
     author_email="prasanthhn@gmail.com",
-    url='http://github.com/phn/jdcal',
+    url='https://github.com/phn/jdcal',
     classifiers=[
         'Development Status :: 6 - Mature',
         'Intended Audience :: Science/Research',
