@@ -4,8 +4,8 @@ jdcal
 .. _TPM: http://www.sal.wisc.edu/~jwp/astro/tpm/tpm.html
 .. _Jeffrey W. Percival: http://www.sal.wisc.edu/~jwp/
 .. _IAU SOFA: http://www.iausofa.org/
-.. _pip: http://pypi.python.org/pypi/pip
-.. _easy_install: packages.python.org/distribute/easy_install.html
+.. _pip: https://pypi.python.org/pypi/pip
+.. _easy_install: https://setuptools.readthedocs.io/en/latest/easy_install.html
 
 .. image:: https://travis-ci.org/phn/jdcal.svg?branch=master
     :target: https://travis-ci.org/phn/jdcal
@@ -47,7 +47,7 @@ Examples
 --------
 
 Some examples are given below. For more information see
-http://oneau.wordpress.com/jdcal/.
+https://oneau.wordpress.com/2011/08/30/jdcal/.
 
 Gregorian calendar:
 

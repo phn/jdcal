@@ -7,14 +7,15 @@ python:
     - 2.7
     - 3.4
     - 3.5
+    - 3.6
     - pypy
     - pypy3
 
 matrix:
     include:
-        - python: 3.5
+        - python: 3.6
           env: STYLE='code'
-        - python: 3.5
+        - python: 3.6
           env: STYLE='docs'
 
 install:
