@@ -44,4 +44,3 @@ script:
       else
         py.test
       fi
-

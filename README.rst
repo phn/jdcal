@@ -148,4 +148,3 @@ Released under BSD; see LICENSE.txt.
 
 For comments and suggestions, email to user `prasanthhn` in the `gmail.com`
 domain.
-
