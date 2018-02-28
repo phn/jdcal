@@ -13,7 +13,7 @@ jdcal 1.2
 
     No change in functionalities.
 
-    Added test_jdcal.py; removed test functions from jdcal.py. 
+    Added test_jdcal.py; removed test functions from jdcal.py.
 
     Added CHANGELOG.txt.
 
@@ -21,9 +21,9 @@ jdcal 1.2
 
 
 jdcal 1.0.1
-    
-    This version has exactly the same code as in jdcal 1.0, except the 
-    tar file has LICENSE.txt in it.
 
-    See issue #5 (https://github.com/phn/jdcal/issues/5) for why version this 
+    This version has exactly the same code as in jdcal 1.0, except the
+    tar file has LICENSE.txt in it.
+    
+    See issue #5 (https://github.com/phn/jdcal/issues/5) for why this version
     was created.
