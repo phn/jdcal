@@ -17,6 +17,7 @@ setup(
     author="Prasanth Nair",
     author_email="prasanthhn@gmail.com",
     url='https://github.com/phn/jdcal',
+    python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
     classifiers=[
         'Development Status :: 6 - Mature',
         'Intended Audience :: Science/Research',
