@@ -1,6 +1,8 @@
-UNRELEASED
+jdcal 1.4
 
-    Add universal wheel distribution.
+    Universal wheel distribution.
+    Test to compare gcal2jd with astropy._erfa.cal2jd.
+    Add more Python versions on Travis.
 
 jdcal 1.3
 

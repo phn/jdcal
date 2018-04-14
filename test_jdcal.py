@@ -94,26 +94,26 @@ def test_jcal2jd_and_back_through_jd2jcal():
         assert x[i][3] <= 1e-15
 
 
-def pyslalib_un_available():
+def astropy_erfa_un_available():
     x = True
     try:
-        from pyslalib import slalib
-        slalib.sla_cldj
+        from astropy import _erfa
+        import numpy as np
+        _erfa.cal2jd
+        np.allclose
         x = False
     except:
         pass
     return x
 
 
-@pytest.mark.skipif(pyslalib_un_available(), reason="pyslalib not available")
-def test_gcal2jd_with_sla_cldj():
-    """Compare gcal2jd with slalib.sla_cldj."""
+@pytest.mark.skipif(astropy_erfa_un_available(), reason="astropy._erfa not available")
+def test_gcal2jd_with_astropy_erfa_cal2jd():
+    """Compare gcal2jd with astropy._erfa.cal2jd."""
     import random
-    try:
-        from pyslalib import slalib
-    except ImportError:
-        print("SLALIB (PySLALIB not available).")
-        return 1
+    import numpy as np
+    from astropy import _erfa
+
     n = 1000
     mday = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
@@ -128,13 +128,7 @@ def test_gcal2jd_with_sla_cldj():
         if day[i] > mday[month[i]] + x:
             day[i] = mday[month[i]]
 
-    jd_jdc = [gcal2jd(y, m, d)[1]
-              for y, m, d in zip(year, month, day)]
-    jd_sla = [slalib.sla_cldj(y, m, d)[0]
-              for y, m, d in zip(year, month, day)]
-    diff = [abs(i - j) for i, j in zip(jd_sla, jd_jdc)]
-    assert max(diff) <= 1e-8
-    assert min(diff) <= 1e-8
+    jd_jdcal = np.array([gcal2jd(y, m, d) for y, m, d in zip(year, month, day)])
+    jd_erfa = np.array(_erfa.cal2jd(year, month, day)).T
 
-if __name__ == '__main__':
-    pytest.main()
+    assert np.allclose(jd_jdcal, jd_erfa)
