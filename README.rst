@@ -4,7 +4,7 @@ jdcal
 .. _TPM: http://www.sal.wisc.edu/~jwp/astro/tpm/tpm.html
 .. _Jeffrey W. Percival: http://www.sal.wisc.edu/~jwp/
 .. _IAU SOFA: http://www.iausofa.org/
-.. _pip: https://pypi.python.org/pypi/pip
+.. _pip: https://pypi.org/project/pip/
 .. _easy_install: https://setuptools.readthedocs.io/en/latest/easy_install.html
 
 .. image:: https://travis-ci.org/phn/jdcal.svg?branch=master
