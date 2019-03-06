@@ -27,6 +27,7 @@ matrix:
           sudo: true
 
 install:
+    - pip install --upgrade pip setuptools
     - |
       if [[ $STYLE ]]; then
         if [[ $STYLE == 'code' ]]; then
