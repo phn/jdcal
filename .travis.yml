@@ -16,15 +16,12 @@ matrix:
         # Enable 3.7 without globally enabling sudo and dist: xenial for other build jobs
         - python: 3.7
           dist: xenial
-          sudo: true
         - python: 3.7
           env: STYLE='code'
           dist: xenial
-          sudo: true
         - python: 3.7
           env: STYLE='docs'
           dist: xenial
-          sudo: true
 
 install:
     - pip install --upgrade pip setuptools
