@@ -1,6 +1,7 @@
 sudo: false
 
 language: python
+dist: xenial
 cache: pip
 
 python:
@@ -13,18 +14,12 @@ python:
 
 matrix:
     include:
-        # Enable 3.7 without globally enabling sudo and dist: xenial for other build jobs
-        - python: 3.7
-          dist: xenial
         - python: 3.7
           env: STYLE='code'
-          dist: xenial
         - python: 3.7
           env: STYLE='docs'
-          dist: xenial
 
 install:
-    - pip install --upgrade pip setuptools
     - |
       if [[ $STYLE ]]; then
         if [[ $STYLE == 'code' ]]; then
