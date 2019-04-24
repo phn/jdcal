@@ -3,22 +3,22 @@ dist: xenial
 cache: pip
 
 python:
-   - 2.7
-   - 3.5
-   - 3.6
-   - 3.7
-   - pypy2.7-6.0
-   - pypy3.5-6.0
+    - 2.7
+    - 3.5
+    - 3.6
+    - 3.7
+    - pypy2.7-6.0
+    - pypy3.5-6.0
 
 matrix:
-   include:
-       - name: code
-         python: 3.7
-         install: pip install pycodestyle
-         script: pycodestyle --verbose jdcal.py test_jdcal.py
-       - name: docs
-         python: 3.7
-         install: pip install pydocstyle
-         script: pydocstyle --verbose jdcal.py test_jdcal.py
+    include:
+        - name: code
+          python: 3.7
+          install: pip install pycodestyle
+          script: pycodestyle --verbose jdcal.py test_jdcal.py
+        - name: docs
+          python: 3.7
+          install: pip install pydocstyle
+          script: pydocstyle --verbose jdcal.py test_jdcal.py
 
 script: py.test
