@@ -1,3 +1,11 @@
+jdcal 1.4.1 
+
+    Remove testing for Python 2.6 and 3.3.
+    Added testing for Python 3.7. For current Python versions tested 
+    see travis.yml.
+
+    Removed unused function `fpart`.
+
 jdcal 1.4
 
     Universal wheel distribution.
