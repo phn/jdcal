@@ -1,47 +1,24 @@
-sudo: false
-
 language: python
 dist: xenial
 cache: pip
 
 python:
-    - 2.7
-    - 3.4
-    - 3.5
-    - 3.6
-    - 3.7
-    - pypy2.7-6.0
-    - pypy3.5-6.0
+   - 2.7
+   - 3.5
+   - 3.6
+   - 3.7
+   - pypy2.7-6.0
+   - pypy3.5-6.0
 
 matrix:
-    include:
-        - python: 3.7
-          env: STYLE='code'
-        - python: 3.7
-          env: STYLE='docs'
+   include:
+       - name: code
+         python: 3.7
+         install: pip install pycodestyle
+         script: pycodestyle --verbose jdcal.py test_jdcal.py
+       - name: docs
+         python: 3.7
+         install: pip install pydocstyle
+         script: pydocstyle --verbose jdcal.py test_jdcal.py
 
-install:
-    - |
-      if [[ $STYLE ]]; then
-        if [[ $STYLE == 'code' ]]; then
-            pip install pycodestyle
-        fi
-        if [[ $STYLE == 'docs' ]]; then
-            pip install pydocstyle
-        fi
-      else
-        pip install -U pytest
-      fi
-
-script:
-    - |
-      if [[ $STYLE ]]; then
-        if [[ $STYLE == 'code' ]]; then
-            pycodestyle --verbose jdcal.py test_jdcal.py
-        fi
-        if [[ $STYLE == 'docs' ]]; then
-            pydocstyle --verbose jdcal.py test_jdcal.py
-        fi
-      else
-        py.test
-      fi
+script: py.test
