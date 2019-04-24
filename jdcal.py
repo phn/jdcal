@@ -48,11 +48,6 @@ MJD_0 = 2400000.5
 MJD_JD2000 = 51544.5
 
 
-def fpart(x):
-    """Return fractional part of given number."""
-    return math.modf(x)[0]
-
-
 def ipart(x):
     """Return integer part of given number."""
     return math.modf(x)[1]

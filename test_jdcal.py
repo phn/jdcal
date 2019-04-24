@@ -2,14 +2,7 @@
 import pytest
 
 from jdcal import (
-    fpart, ipart, is_leap, gcal2jd, jd2gcal, jcal2jd, jd2jcal, MJD_0)
-
-
-def test_fpart():
-    assert round(fpart(20.345), 12) == 0.345
-    assert round(fpart(-20.345), 12) == -0.345
-    assert round(fpart(0.12345), 12) == 0.12345
-    assert round(fpart(-0.6789), 12) == -0.6789
+    ipart, is_leap, gcal2jd, jd2gcal, jcal2jd, jd2jcal, MJD_0)
 
 
 def test_ipart():
