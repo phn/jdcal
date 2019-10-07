@@ -55,9 +55,9 @@ def ipart(x):
 
 def is_leap(year):
     """Leap year or not in the Gregorian calendar."""
-    x = math.fmod(year, 4)
-    y = math.fmod(year, 100)
-    z = math.fmod(year, 400)
+    x = year % 4
+    y = year % 100
+    z = year % 400
 
     # Divisible by 4 and,
     # either not divisible by 100 or divisible by 400.
