@@ -48,11 +48,6 @@ MJD_0 = 2400000.5
 MJD_JD2000 = 51544.5
 
 
-def ipart(x):
-    """Return integer part of given number."""
-    return math.modf(x)[1]
-
-
 def is_leap(year):
     """Leap year or not in the Gregorian calendar."""
     x = math.fmod(year, 4)
@@ -183,11 +178,11 @@ def gcal2jd(year, month, day):
     month = int(month)
     day = int(day)
 
-    a = ipart((month - 14) / 12.0)
-    jd = ipart((1461 * (year + 4800 + a)) / 4.0)
-    jd += ipart((367 * (month - 2 - 12 * a)) / 12.0)
-    x = ipart((year + 4900 + a) / 100.0)
-    jd -= ipart((3 * x) / 4.0)
+    a = int((month - 14) / 12.0)
+    jd = int((1461 * (year + 4800 + a)) / 4.0)
+    jd += int((367 * (month - 2 - 12 * a)) / 12.0)
+    x = int((year + 4900 + a) / 100.0)
+    jd -= int((3 * x) / 4.0)
     jd += day - 2432075.5  # was 32075; add 2400000.5
 
     jd -= 0.5  # 0 hours; above JD is for midday, switch to midnight.
@@ -283,13 +278,13 @@ def jd2gcal(jd1, jd2):
         f += 1.5
 
     l = jd_i + 68569
-    n = ipart((4 * l) / 146097.0)
-    l -= ipart(((146097 * n) + 3) / 4.0)
-    i = ipart((4000 * (l + 1)) / 1461001)
-    l -= ipart((1461 * i) / 4.0) - 31
-    j = ipart((80 * l) / 2447.0)
-    day = l - ipart((2447 * j) / 80.0)
-    l = ipart(j / 11.0)
+    n = int((4 * l) / 146097.0)
+    l -= int(((146097 * n) + 3) / 4.0)
+    i = int((4000 * (l + 1)) / 1461001)
+    l -= int((1461 * i) / 4.0) - 31
+    j = int((80 * l) / 2447.0)
+    day = l - int((2447 * j) / 80.0)
+    l = int(j / 11.0)
     month = j + 2 - (12 * l)
     year = 100 * (n - 49) + i + l
 
@@ -352,9 +347,9 @@ def jcal2jd(year, month, day):
     day = int(day)
 
     jd = 367 * year
-    x = ipart((month - 9) / 7.0)
-    jd -= ipart((7 * (year + 5001 + x)) / 4.0)
-    jd += ipart((275 * month) / 9.0)
+    x = int((month - 9) / 7.0)
+    jd -= int((7 * (year + 5001 + x)) / 4.0)
+    jd += int((275 * month) / 9.0)
     jd += day
     jd += 1729777 - 2400000.5  # Return 240000.5 as first part of JD.
 
@@ -427,13 +422,13 @@ def jd2jcal(jd1, jd2):
         f += 1.5
 
     j = jd_i + 1402.0
-    k = ipart((j - 1) / 1461.0)
+    k = int((j - 1) / 1461.0)
     l = j - (1461.0 * k)
-    n = ipart((l - 1) / 365.0) - ipart(l / 1461.0)
+    n = int((l - 1) / 365.0) - int(l / 1461.0)
     i = l - (365.0 * n) + 30.0
-    j = ipart((80.0 * i) / 2447.0)
-    day = i - ipart((2447.0 * j) / 80.0)
-    i = ipart(j / 11.0)
+    j = int((80.0 * i) / 2447.0)
+    day = i - int((2447.0 * j) / 80.0)
+    i = int(j / 11.0)
     month = j + 2 - (12.0 * i)
     year = (4 * k) + n + i - 4716.0
 
