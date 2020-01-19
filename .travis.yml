@@ -1,47 +1,25 @@
-sudo: false
-
 language: python
-dist: xenial
 cache: pip
 
 python:
-    - 2.7
-    - 3.4
-    - 3.5
-    - 3.6
-    - 3.7
-    - pypy2.7-6.0
-    - pypy3.5-6.0
+  - 3.8
+  - 3.7
+  - 3.6
+  - 3.5
+  - 3.4
+  - 2.7
+  - pypy3
+  - pypy
+
+env:
+  global:
+    - TOXENV=py
 
 matrix:
-    include:
-        - python: 3.7
-          env: STYLE='code'
-        - python: 3.7
-          env: STYLE='docs'
+  include:
+    - env: TOXENV=codestyle
+    - env: TOXENV=docstyle
 
-install:
-    - |
-      if [[ $STYLE ]]; then
-        if [[ $STYLE == 'code' ]]; then
-            pip install pycodestyle
-        fi
-        if [[ $STYLE == 'docs' ]]; then
-            pip install pydocstyle
-        fi
-      else
-        pip install -U pytest
-      fi
+install: pip install tox
 
-script:
-    - |
-      if [[ $STYLE ]]; then
-        if [[ $STYLE == 'code' ]]; then
-            pycodestyle --verbose jdcal.py test_jdcal.py
-        fi
-        if [[ $STYLE == 'docs' ]]; then
-            pydocstyle --verbose jdcal.py test_jdcal.py
-        fi
-      else
-        py.test
-      fi
+script: tox
