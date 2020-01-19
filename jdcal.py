@@ -262,10 +262,8 @@ def jd2gcal(jd1, jd2):
     gcal2jd
 
     """
-    from math import modf
-
-    jd1_f, jd1_i = modf(jd1)
-    jd2_f, jd2_i = modf(jd2)
+    jd1_f, jd1_i = math.modf(jd1)
+    jd2_f, jd2_i = math.modf(jd2)
 
     jd_i = jd1_i + jd2_i
 
@@ -406,10 +404,8 @@ def jd2jcal(jd1, jd2):
     (2000, 1, 1, 0.75)
 
     """
-    from math import modf
-
-    jd1_f, jd1_i = modf(jd1)
-    jd2_f, jd2_i = modf(jd2)
+    jd1_f, jd1_i = math.modf(jd1)
+    jd2_f, jd2_i = math.modf(jd2)
 
     jd_i = jd1_i + jd2_i
 
