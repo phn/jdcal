@@ -1,15 +1,7 @@
 """Tests for jdcal.py"""
 import pytest
 
-from jdcal import (
-    ipart, is_leap, gcal2jd, jd2gcal, jcal2jd, jd2jcal, MJD_0)
-
-
-def test_ipart():
-    assert round(ipart(20.345), 12) == 20.0
-    assert round(ipart(-20.345), 12) == -20.0
-    assert round(ipart(0.12345), 12) == -0.0
-    assert round(ipart(-0.6789), 12) == -0.0
+from jdcal import is_leap, gcal2jd, jd2gcal, jcal2jd, jd2jcal, MJD_0
 
 
 def test_is_leap():
