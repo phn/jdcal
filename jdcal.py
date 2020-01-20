@@ -275,16 +275,16 @@ def jd2gcal(jd1, jd2):
         jd_i -= 1
         f += 1.5
 
-    l = jd_i + 68569
-    n = int((4 * l) / 146097.0)
-    l -= int(((146097 * n) + 3) / 4.0)
-    i = int((4000 * (l + 1)) / 1461001)
-    l -= int((1461 * i) / 4.0) - 31
-    j = int((80 * l) / 2447.0)
-    day = l - int((2447 * j) / 80.0)
-    l = int(j / 11.0)
-    month = j + 2 - (12 * l)
-    year = 100 * (n - 49) + i + l
+    ell = jd_i + 68569
+    n = int((4 * ell) / 146097.0)
+    ell -= int(((146097 * n) + 3) / 4.0)
+    i = int((4000 * (ell + 1)) / 1461001)
+    ell -= int((1461 * i) / 4.0) - 31
+    j = int((80 * ell) / 2447.0)
+    day = ell - int((2447 * j) / 80.0)
+    ell = int(j / 11.0)
+    month = j + 2 - (12 * ell)
+    year = 100 * (n - 49) + i + ell
 
     return int(year), int(month), int(day), f
 
@@ -419,9 +419,9 @@ def jd2jcal(jd1, jd2):
 
     j = jd_i + 1402.0
     k = int((j - 1) / 1461.0)
-    l = j - (1461.0 * k)
-    n = int((l - 1) / 365.0) - int(l / 1461.0)
-    i = l - (365.0 * n) + 30.0
+    ell = j - (1461.0 * k)
+    n = int((ell - 1) / 365.0) - int(ell / 1461.0)
+    i = ell - (365.0 * n) + 30.0
     j = int((80.0 * i) / 2447.0)
     day = i - int((2447.0 * j) / 80.0)
     i = int(j / 11.0)
