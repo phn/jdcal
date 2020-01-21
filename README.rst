@@ -5,7 +5,6 @@ jdcal
 .. _Jeffrey W. Percival: http://www.sal.wisc.edu/~jwp/
 .. _IAU SOFA: http://www.iausofa.org/
 .. _pip: https://pypi.org/project/pip/
-.. _easy_install: https://setuptools.readthedocs.io/en/latest/easy_install.html
 
 .. image:: https://travis-ci.org/phn/jdcal.svg?branch=master
     :target: https://travis-ci.org/phn/jdcal
@@ -119,16 +118,9 @@ JD for zero point of MJD, and MJD for JD2000.0:
 Installation
 ------------
 
-The module can be installed using `pip`_ or `easy_install`_::
+The module can be installed using `pip`_::
 
   $ pip install jdcal
-
-or,
-
-::
-
-  $ easy_install jdcal
-
 
 Tests are in ``test_jdcal.py``.
 
