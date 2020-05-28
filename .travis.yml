@@ -2,12 +2,6 @@ language: python
 cache: pip
 
 python:
-  - 3.8
-  - 3.7
-  - 3.6
-  - 3.5
-  - 3.4
-  - 2.7
   - pypy3
   - pypy
 
@@ -17,8 +11,10 @@ env:
 
 matrix:
   include:
-    - env: TOXENV=codestyle
-    - env: TOXENV=docstyle
+    - python: 3.8
+      env: TOXENV=codestyle
+    - python: 3.8
+      env: TOXENV=docstyle
     - python: 3.8
       env: TOXENV=py38
     - python: 3.7
