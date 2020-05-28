@@ -199,7 +199,7 @@ def jd2gcal(jd1, jd2):
 
     Parameters
     ----------
-    jd1, jd2: int
+    jd1, jd2: float
         Sum of the two numbers is taken as the given Julian date. For
         example `jd1` can be the zero point of MJD (MJD_0) and `jd2`
         can be the MJD of the date and time. But any combination will
@@ -365,7 +365,7 @@ def jd2jcal(jd1, jd2):
 
     Parameters
     ----------
-    jd1, jd2: int
+    jd1, jd2: float
         Sum of the two numbers is taken as the given Julian date. For
         example `jd1` can be the zero point of MJD (MJD_0) and `jd2`
         can be the MJD of the date and time. But any combination will
