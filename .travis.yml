@@ -63,6 +63,6 @@ before_install:
 
 install: 
   - pip install tox
-  - if [[ "$TRAVIS_CPU_ARCH" == "ppc64le" ]]; then pip install pytest; pip install astropy; fi
+  - if [[ "$TRAVIS_CPU_ARCH" == "ppc64le" ]]; then pip install pytest; pip install astropy; pip install typing; fi
 
 script: tox
