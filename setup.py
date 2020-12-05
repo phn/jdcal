@@ -2,13 +2,13 @@
 
 from setuptools import setup
 
-from __init__ import version
+from __version__ import __version__
 
 long_description = open("README.rst").read()
 
 setup(
     name="jdcal",
-    version=version,
+    version=__version__,
     description="Julian dates from proleptic Gregorian and Julian calendars.",
     long_description=long_description,
     license='BSD',
