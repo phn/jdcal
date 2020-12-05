@@ -2,9 +2,7 @@
 
 from setuptools import setup
 
-import jdcal
-
-version = jdcal.__version__
+from __init__ import version
 
 long_description = open("README.rst").read()
 
@@ -35,5 +33,6 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
     ],
-    py_modules=["jdcal"]
+    py_modules=["jdcal"],
+    install_requires=["typing;python_version<'3.5'"]
 )
