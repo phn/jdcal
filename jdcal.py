@@ -43,8 +43,6 @@ from __future__ import print_function
 import math
 from typing import Tuple
 
-__version__ = "1.4.1"
-
 MJD_0 = 2400000.5
 MJD_JD2000 = 51544.5
 
