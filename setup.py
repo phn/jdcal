@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
-import jdcal
-
-version = jdcal.__version__
 
 long_description = open("README.rst").read()
 
+with open("src/jdcal/version.py") as f:
+    exec(f.read())
+
 setup(
     name="jdcal",
-    version=version,
+    version=__version__,
     description="Julian dates from proleptic Gregorian and Julian calendars.",
     long_description=long_description,
     license='BSD',
@@ -35,5 +35,9 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
     ],
-    py_modules=["jdcal"]
+    # py_modules=["jdcal"],
+    packages=find_packages("src"),
+    package_dir={"": "src"},
+    install_requires=["typing;python_version<'3.5'"],
+    include_package_data=True,
 )

@@ -16,6 +16,8 @@ matrix:
     - python: 3.8
       env: TOXENV=docstyle
     - python: 3.8
+      env: TOXENV=mypy
+    - python: 3.8
       env: TOXENV=py38
     - python: 3.7
       env: TOXENV=py37
@@ -36,6 +38,9 @@ matrix:
       env: TOXENV=docstyle
     - python: 3.8
       arch: ppc64le
+      env: TOXENV=mypy
+    - python: 3.8
+      arch: ppc64le
       env: TOXENV=py38
     - python: 3.7
       arch: ppc64le
@@ -54,12 +59,6 @@ matrix:
       python: pypy
     - arch: ppc64le
       python: pypy3
-
-before_install:
-  - | 
-   if [[ "$TRAVIS_CPU_ARCH" == "ppc64le" ]]; then
-     sudo chown -Rv $USER:$GROUP ~/.cache/pip/wheels
-   fi
 
 install: 
   - pip install tox

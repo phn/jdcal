@@ -41,14 +41,14 @@ inspired by the IAU SOFA C library.
 from __future__ import division
 from __future__ import print_function
 import math
+from typing import Tuple
 
-__version__ = "1.4.1"
 
 MJD_0 = 2400000.5
 MJD_JD2000 = 51544.5
 
 
-def is_leap(year):
+def is_leap(year):  # type: (int) -> int
     """Leap year or not in the Gregorian calendar."""
     x = year % 4
     y = year % 100
@@ -59,7 +59,7 @@ def is_leap(year):
     return not x and (y or not z)
 
 
-def gcal2jd(year, month, day):
+def gcal2jd(year, month, day):  # type: (int, int, int) -> Tuple[float, float]
     """Gregorian calendar date to Julian date.
 
     The input and output are for the proleptic Gregorian calendar,
@@ -179,7 +179,7 @@ def gcal2jd(year, month, day):
     day = int(day)
 
     a = int((month - 14) / 12.0)
-    jd = int((1461 * (year + 4800 + a)) / 4.0)
+    jd = int((1461 * (year + 4800 + a)) / 4.0)  # type: float
     jd += int((367 * (month - 2 - 12 * a)) / 12.0)
     x = int((year + 4900 + a) / 100.0)
     jd -= int((3 * x) / 4.0)
@@ -190,7 +190,7 @@ def gcal2jd(year, month, day):
     return MJD_0, jd
 
 
-def jd2gcal(jd1, jd2):
+def jd2gcal(jd1, jd2):  # type: (float, float) -> Tuple[int, int, int, float]
     """Julian date to Gregorian calendar date and time of day.
 
     The input and output are for the proleptic Gregorian calendar,
@@ -289,7 +289,7 @@ def jd2gcal(jd1, jd2):
     return int(year), int(month), int(day), f
 
 
-def jcal2jd(year, month, day):
+def jcal2jd(year, month, day):  # type: (int, int, int) -> Tuple[float, float]
     """Julian calendar date to Julian date.
 
     The input and output are for the proleptic Julian calendar,
@@ -344,7 +344,7 @@ def jcal2jd(year, month, day):
     month = int(month)
     day = int(day)
 
-    jd = 367 * year
+    jd = 367 * year  # type: float
     x = int((month - 9) / 7.0)
     jd -= int((7 * (year + 5001 + x)) / 4.0)
     jd += int((275 * month) / 9.0)
@@ -356,7 +356,7 @@ def jcal2jd(year, month, day):
     return MJD_0, jd
 
 
-def jd2jcal(jd1, jd2):
+def jd2jcal(jd1, jd2):  # type: (float, float) -> Tuple[int, int, int, float]
     """Julian calendar date for the given Julian date.
 
     The input and output are for the proleptic Julian calendar,
