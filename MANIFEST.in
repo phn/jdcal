@@ -1,4 +1,4 @@
 include README.rst
 include LICENSE.txt
-include *jdcal.py
-include __version__.py
+include src/jdcal/*.py
+include src/jdcal/py.typed

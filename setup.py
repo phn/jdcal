@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
-from __version__ import __version__
 
 long_description = open("README.rst").read()
+
+with open("src/jdcal/version.py") as f:
+    exec(f.read())
 
 setup(
     name="jdcal",
@@ -33,6 +35,9 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
     ],
-    py_modules=["jdcal"],
-    install_requires=["typing;python_version<'3.5'"]
+    # py_modules=["jdcal"],
+    packages=find_packages("src"),
+    package_dir={"": "src"},
+    install_requires=["typing;python_version<'3.5'"],
+    include_package_data=True,
 )
