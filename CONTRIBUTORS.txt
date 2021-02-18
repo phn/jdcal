@@ -1,0 +1,13 @@
+Following lists the github user names of those who have contributed to
+this project, through code as well as through comments. More details
+are at https://github.com/phn/jdcal/graphs/contributors.
+
++ phn (owner)
++ jdufresne
++ medecau
++ Coop56
++ kishorkunal-raj
++ mattjmorrison
++ avalentino
++ hugovk
++ zed
