@@ -6,9 +6,8 @@ jdcal
 .. _IAU SOFA: http://www.iausofa.org/
 .. _pip: https://pypi.org/project/pip/
 
-.. image:: https://travis-ci.org/phn/jdcal.svg?branch=master
-    :target: https://travis-ci.org/phn/jdcal
-
+.. image:: https://github.com/phn/jdcal/workflows/CI/badge.svg
+   :target: https://github.com/phn/jdcal/actions?query=workflow%3ACI
 
 This module contains functions for converting between Julian dates and
 calendar dates.
