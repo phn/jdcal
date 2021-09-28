@@ -80,7 +80,7 @@ def gcal2jd(year, month, day):
     jd1, jd2: 2-element tuple of floats
         When added together, the numbers give the Julian date for the
         given Gregorian calendar date. The first number is always
-        MJD_0 i.e., 2451545.5. So the second is the MJD.
+        MJD_0 i.e., 2400000.5. So the second is the MJD.
 
     Examples
     --------
